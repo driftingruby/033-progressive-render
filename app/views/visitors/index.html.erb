@@ -1,2 +1,38 @@
-<h1>Visitors#index</h1>
+<h4>Visitors#index</h4>
 <p>Find me in app/views/visitors/index.html.erb</p>
+<% sleep 1 %>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">All Users</h3>
+  </div>
+  <div class="table-responsive">
+    <%= progressive_render do %>
+      <table class="table table-condensed table-hover">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip Code</th>
+          </tr>
+        </thead>
+        <tbody>
+              <% @users.each do |user| %>
+                <tr>
+                  <td><%= user.first_name %></td>
+                  <td><%= user.last_name %></td>
+                  <td><%= user.email %></td>
+                  <td><%= user.address %></td>
+                  <td><%= user.city %></td>
+                  <td><%= user.state %></td>
+                  <td><%= user.zip_code %></td>
+                </tr>
+              <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+</div>

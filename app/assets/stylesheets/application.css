@@ -10,6 +10,9 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require progressive_render
  *= require_tree .
  *= require_self
  */
+
+.row { margin-top: 15px; }

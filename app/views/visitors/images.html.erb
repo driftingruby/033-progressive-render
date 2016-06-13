@@ -1,0 +1,13 @@
+<h4>Visitors#images</h4>
+<p>Find me in app/views/visitors/images.html.erb</p>
+<% 24.times.each_slice(6) do |row_of_items| %>
+  <div class='row'>
+    <% row_of_items.each do |item| %>
+      <div class='col-sm-2'>
+        <%= progressive_render do %>
+          <%= image_tag "http://lorempixel.com/155/155/?rnd=#{SecureRandom.hex}", class: 'img-thumbnail' %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
